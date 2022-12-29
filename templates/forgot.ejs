@@ -25,7 +25,7 @@
                                 <input type="number" id="input" name="phone_number"
                                     class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"
                                     required aria-describedby="email-error" placeholder="Enter your number" min="9999"
-                                    minlength="6">
+                                    autocomplete="cc-number" minlength="6">
                             </div>
                             <p class="invisible text-xs text-red-600 mt-2 min-h-[1rem] font-semibold" id="email-error">
                                 Please
@@ -72,11 +72,14 @@
             label.innerText = 'Email address';
             input.setAttribute('type', 'email');
             input.setAttribute('name', 'email');
+            input.setAttribute('autocomplete', 'email');
             input.setAttribute('placeholder', 'Enter your email');
         } else {
             label.innerText = 'Phone number';
             input.setAttribute('type', 'number');
             input.setAttribute('name', 'phone_number');
+            input.setAttribute('autocomplete', 'cc-number');
+
             input.setAttribute('placeholder', 'Enter your number');
 
 
