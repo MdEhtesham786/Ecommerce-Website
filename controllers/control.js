@@ -77,7 +77,7 @@ const verifyNumberPage = async (req, res) => {
 };
 const categoryPage = async (req, res) => {
     try {
-        res.render('category', { layout: 'categoy' });
+        res.render('category', { layout: 'category' });
     } catch (err) {
         console.log(err);
         res.send(err);
@@ -104,7 +104,7 @@ const shoppingCartPage = async (req, res) => {
 };
 const adminDashboardPage = async (req, res) => {
     try {
-        res.render('adminDashboard', { layout: 'admin' });
+        res.render('adminDashboard', { layout: 'adminDashboard' });
     } catch (err) {
         console.log(err);
         res.send(err);
