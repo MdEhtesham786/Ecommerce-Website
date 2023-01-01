@@ -78,6 +78,9 @@
 
     </div>
 </div>
+<div class="self hidden">
+    <%=resend%>
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {
         let resendBtn = document.getElementById('resendBtn');
@@ -86,93 +89,55 @@
         let timer = document.querySelector('.timer');
         let counter = document.querySelector('.counter');
         let iterate = 60;
+        let resend = document.querySelector('.self').innerText;
         //Resend button logic
 
-        if ( <%= resend %>){
-        timer.classList.remove('invisible');
-        console.log('Removed');
-        resendBtn.setAttribute('disabled', 'disable');
-        setInterval(() => {
-            if (iterate > 1) {
-                iterate--;
-                if (iterate < 10) {
-                    counter.innerText = `0:0${iterate}`;
-                } else {
-                    counter.innerText = `0:${iterate}`;
-                }
-            } else {
-                clearInterval(1);
-                resendBtn.removeAttribute('disabled');
-                timer.innerText = '';
-            }
-        }, 1000);
-    }
-
-
-    // resendBtn.addEventListener('click', () => {
-    //     resendForm.setAttribute('action', '/xyz');
-    // });
-    function OTPInput() {
-        const inputs = document.querySelectorAll('#otp >div> *[id]');
-        for (let i = 0; i < inputs.length; i++) {
-            inputs[i].addEventListener('input', (e) => {
-                if (i !== inputs.length - 1) {
-                    if (e.data !== null) {
-                        inputs[i + 1].focus();
+        if (Boolean(resend)) {
+            timer.classList.remove('invisible');
+            console.log('Removed');
+            resendBtn.setAttribute('disabled', 'disable');
+            setInterval(() => {
+                if (iterate > 1) {
+                    iterate--;
+                    if (iterate < 10) {
+                        counter.innerText = `0:0${iterate}`;
+                    } else {
+                        counter.innerText = `0:${iterate}`;
                     }
+                } else {
+                    clearInterval(1);
+                    resendBtn.removeAttribute('disabled');
+                    timer.innerText = '';
                 }
-                if (inputs[i].value < 10) {
-                    inputs[i].value = e.data;
-                }
-                if (inputs[i].value > 9) {
-                    inputs[i].value = e.data;
-                }
-            });
-            inputs[i].addEventListener('keydown', (e) => {
-                if (e.keyCode == 8) {
-                    if (i !== 0) {
-                        if (!e.target.value) {
-                            e.target.value = '';
-                            inputs[i - 1].focus();
+            }, 1000);
+        }
+        function OTPInput() {
+            const inputs = document.querySelectorAll('#otp >div> *[id]');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener('input', (e) => {
+                    if (i !== inputs.length - 1) {
+                        if (e.data !== null) {
+                            inputs[i + 1].focus();
                         }
                     }
-                }
-            });
-            // inputs[i].addEventListener('keydown', function (event) {
-            //     if (event.key === "Backspace") {
-            //         inputs[i].value = '';
-            //         if (i !== 0) inputs[i - 1].focus();
-            //         // event.preventDefault();
-            //     } else {
-            //         if (i === inputs.length - 1 && inputs[i].value !== '') {
-            //             inputs[i].addEventListener('input', () => {
-            //                 if (event.keyCode > 47 && event.keyCode < 58) {
-            //                     inputs[i].value = event.key;
-            //                 } else if (event.keyCode > 95 && event.keyCode < 106) {
-            //                     inputs[i].value = event.key;
-            //                 } else {
-            //                     return;
-            //                 }
-            //             });
-            //             return true;
-            //         } else if (event.keyCode > 47 && event.keyCode < 58) {
-
-            //             inputs[i].value = event.key;
-            //             if (i !== inputs.length - 1) inputs[i + 1].focus();
-            //             event.preventDefault();
-            //         } else if (event.keyCode > 95 && event.keyCode < 106) {
-
-            //             inputs[i].value = event.key;
-            //             if (i !== inputs.length - 1) inputs[i + 1].focus();
-            //             event.preventDefault();
-            //         } else if (event.keyCode == 69) {
-            //             inputs[i].value = '';
-            //             event.preventDefault();
-            //         }
-
-            //     }
-            // });
-        }
-    } OTPInput();
+                    if (inputs[i].value < 10) {
+                        inputs[i].value = e.data;
+                    }
+                    if (inputs[i].value > 9) {
+                        inputs[i].value = e.data;
+                    }
+                });
+                inputs[i].addEventListener('keydown', (e) => {
+                    if (e.keyCode == 8) {
+                        if (i !== 0) {
+                            if (!e.target.value) {
+                                e.target.value = '';
+                                inputs[i - 1].focus();
+                            }
+                        }
+                    }
+                });
+            }
+        } OTPInput();
     });
 </script>

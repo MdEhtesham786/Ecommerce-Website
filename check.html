@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="main h-20 w-20 bg-black transition-opacity ease-linear duration-300  bg-opacity-25 opacity-0"
+        style="display: none;">
+
+    </div>
+    <button class="bg-green-600 text-white
+     w-14">
+        Click
+    </button>
+    <script>
+        let main = document.querySelector('.main');
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            if (main.hasAttribute('style')) {
+                main.removeAttribute('style');
+                setTimeout(() => {
+                    main.classList.add('opacity-100');
+                },);
+
+            } else {
+                main.setAttribute('style', 'display:none;');
+                main.classList.remove('opacity-100');
+
+            }
+
+        })
+    </script>
+</body>
+
+</html> -->
