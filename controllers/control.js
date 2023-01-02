@@ -124,6 +124,7 @@ const pageNotFound = async (req, res) => {
 //POST
 const forgotPassword = async (req, res) => {
     try {
+        console.log(req.body);
         const { email, phone_number, resend } = req.body;
         if (phone_number) {
             let arr = [];

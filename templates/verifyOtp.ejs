@@ -78,9 +78,7 @@
 
     </div>
 </div>
-<div class="self hidden">
-    <%=resend%>
-</div>
+<div class="self hidden" id="<%=resend%>"></div>
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {
         let resendBtn = document.getElementById('resendBtn');
@@ -89,12 +87,20 @@
         let timer = document.querySelector('.timer');
         let counter = document.querySelector('.counter');
         let iterate = 60;
-        let resend = document.querySelector('.self').innerText;
+        let resend = document.querySelector('.self').id;
+        console.log(resend);
         //Resend button logic
 
-        if (Boolean(resend)) {
+        if (resend == 'true') {
+            resend = true;
+        } else if (resend == 'false') {
+            resend = false;
+        } else {
+
+        }
+
+        if (resend) {
             timer.classList.remove('invisible');
-            console.log('Removed');
             resendBtn.setAttribute('disabled', 'disable');
             setInterval(() => {
                 if (iterate > 1) {
