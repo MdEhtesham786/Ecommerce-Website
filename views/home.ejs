@@ -1,5 +1,5 @@
 <%- include('../templates/navbar.ejs')%>
-    <div id="carouselExampleControls" class="carousel slide relative" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide relative mt-16" data-bs-ride="carousel">
         <div class="carousel-inner relative w-full overflow-hidden -z-10">
             <div class="carousel-item active relative float-left w-full">
                 <!-- <img src="../static/img/accessories.jpg" alt=""> -->
@@ -15,13 +15,13 @@
             </div>
         </div>
         <button
-            class="w-[5vw] h-[15vw] carousel-control-prev absolute top-0 bottom-0 flex items-center active:border-white justify-center p-0 text-center  hover:outline-none hover:no-underline border-2 border-gray-400 hover:border-solid hover:bg-gray-300 hover: focus:outline-none focus:no-underline left-0"
+            class="carousel-controls w-[5vw] h-[15vw] carousel-control-prev absolute top-0 bottom-0 flex items-center active:border-white justify-center p-0 text-center  hover:outline-none hover:no-underline border-none hover:border-solid  hover:bg-gray-300 hover: focus:outline-none focus:no-underline left-0"
             type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button
-            class="w-[5vw] h-[15vw] carousel-control-next absolute top-0 bottom-0 flex items-center active:border-white justify-center p-0 text-center  hover:outline-none hover:no-underline border-2 border-gray-400 hover:border-solid hover:bg-gray-300 hover: focus:outline-none focus:no-underline right-0"
+            class="carousel-controls w-[5vw] h-[15vw] carousel-control-next absolute top-0 bottom-0 flex items-center active:border-white justify-center p-0 text-center  hover:outline-none hover:no-underline border-none hover:border-solid  hover:bg-gray-300 hover: focus:outline-none focus:no-underline right-0"
             type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -43,12 +43,12 @@
       }
       ```
     -->
-            <div class="bg-transparent   w-screen ">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mx-auto max-w-2xl max-w-none">
+            <div class="bg-transparent w-screen ">
+                <div class="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-none">
                         <!-- <h2 class="text-2xl font-bold text-gray-900">Collections</h2> -->
 
-                        <div class="mt-6   grid grid-cols-4 gap-x-6 space-y-0">
+                        <div class="mt-6   grid grid-cols-4 gap-x-[4.5rem]  space-y-0">
                             <div class="group relative">
                                 <div
                                     class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 lg:aspect-w-1 lg:aspect-h-1">
@@ -117,66 +117,236 @@
             </div>
 
         </section>
-        <section class="cards  ">
+        <section class="cards  first-cards">
             <!-- component -->
             <div class="flex flex-col  m-auto p-auto">
-                <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-2xl text-gray-800">
+                <h1 class="flex py-2  ml-4 font-bold text-2xl text-gray-800">
                     Fresh Deals
                 </h1>
-                <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
-                    <div id="all-cards" class="flex flex-nowrap overflow-x-scroll mx-10 h-[18rem] ">
-                        <div class="inline-block px-3">
+                <div class="flex overflow-x-scroll   hide-scroll-bar ">
+                    <div class="all-cards flex flex-nowrap overflow-x-scroll mx-2 h-[18rem] ">
+                        <div class="inline-block pr-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                         <div class="inline-block px-3">
                             <div
                                 class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <style>
-                .hide-scroll-bar {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-
-                .hide-scroll-bar::-webkit-scrollbar {
-                    display: none;
-                }
-            </style>
         </section>
+        <section class="cards">
+            <!-- component -->
+            <div class="flex flex-col  m-auto p-auto">
+                <h1 class="flex py-2  ml-4 font-bold text-2xl text-gray-800">
+                    Fresh Deals
+                </h1>
+                <div class="flex overflow-x-scroll hide-scroll-bar ">
+                    <div class="all-cards flex flex-nowrap overflow-x-scroll mx-2 h-[18rem] ">
+                        <div class="inline-block pr-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+                                    alt="Collection of four insulated travel bottles on wooden shelf."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cards">
+            <!-- component -->
+            <div class="flex flex-col  m-auto p-auto">
+                <h1 class="flex py-2  ml-4 font-bold text-2xl text-gray-800">
+                    Fresh Deals
+                </h1>
+                <div class="flex overflow-x-scroll   hide-scroll-bar ">
+                    <div class="all-cards flex flex-nowrap overflow-x-scroll mx-2 h-[18rem] ">
+                        <div class="inline-block pr-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                        <div class="inline-block px-3">
+                            <div
+                                class="w-[17vw] h-[17vw] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                    alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                    class="h-full w-full object-cover object-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- footer -->
+        <%- include('../templates/footer.ejs')%>
+
     </div>

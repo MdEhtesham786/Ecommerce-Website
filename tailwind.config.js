@@ -10,6 +10,9 @@ module.exports = {
   theme: {
 
     extend: {
+      gridTemplateRows: {
+        '[auto,auto,1fr]': 'auto auto 1fr',
+      },
       aspectRatio: {
         '2/3': '2/3'
       },

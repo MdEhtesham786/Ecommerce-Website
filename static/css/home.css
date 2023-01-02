@@ -29,12 +29,27 @@
     position: absolute;
     width: 100vw;
     top: 22vw;
-    background: linear-gradient(transparent, #eaeded 40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(transparent, #eaeded 40%, #b6b7b7);
     /* background-color: black; */
+    /* */
 }
 
 .cards {
-    margin-top: 3rem;
+    max-width: 86rem;
+    border-radius: .4vw;
+    background-color: white;
+    padding-bottom: 1rem;
+}
+
+.first-cards {
+    margin-top: 5rem;
+}
+
+section.first-cards~section {
+    margin-top: 1rem;
 }
 
 .group {
@@ -52,7 +67,31 @@
     width: 19vw;
 }
 
-#all-cards>div>div {
+
+.all-cards::-webkit-scrollbar {
+    background-color: transparent;
+    height: .6vw;
+}
+
+.all-cards::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+
+}
+
+.all-cards:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(206, 203, 203);
+}
+
+.all-cards>div>div {
     cursor: pointer;
     /* padding-top: 10vw; */
+}
+
+.hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+    display: none;
 }

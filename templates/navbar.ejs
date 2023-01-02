@@ -12,13 +12,13 @@
   }
   ```
 -->
-<div class="bg-white">
+<div class="bg-white z-40 relative">
     <!--
       Mobile menu
   
       Off-canvas menu for mobile, show/hide based on off-canvas menu state.
     -->
-    <div id="main" class="relative z-40 lg:hidden" role="dialog" aria-modal="true" style="display: none;">
+    <div id="main" class="relative  lg:hidden" role="dialog" aria-modal="true" style="display: none;">
         <!--
         Off-canvas menu backdrop, show/hide based on off-canvas menu state.
   
@@ -365,7 +365,7 @@
             class="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
             Get free delivery on orders over $100</p> -->
 
-        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Top" class="mx-auto w-[95rem] fixed top-0 bg-white  px-4 sm:px-6 lg:px-8">
             <div class="border-b border-gray-200">
                 <div class="flex h-16 items-center">
                     <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
@@ -721,24 +721,8 @@
                     </div>
 
                     <div class="ml-auto flex items-center">
-                        <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                            <a href="/login" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
-                            <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                            <a href="/sign-up" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create
-                                account</a>
-                        </div>
-
-                        <!-- <div class="hidden lg:ml-8 lg:flex">
-                            <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
-                                <img src="https://tailwindui.com/img/flags/flag-canada.svg" alt=""
-                                    class="block h-auto w-5 flex-shrink-0">
-                                <span class="ml-3 block text-sm font-medium">CAD</span>
-                                <span class="sr-only">, change currency</span>
-                            </a>
-                        </div> -->
-                        <!-- Search -->
-                        <div class="flex justify-center ml-7 ">
-                            <div class=" xl:w-80">
+                        <div class="flex justify-center mr-7 ">
+                            <div class=" xl:w-96 lg:w-80 sm:w-72">
                                 <div class="input-group relative flex flex-wrap items-stretch w-full ">
                                     <input type="search"
                                         class="h-8 form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -757,6 +741,23 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                            <a href="/login" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                            <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                            <a href="/sign-up" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create
+                                account</a>
+                        </div>
+
+                        <!-- <div class="hidden lg:ml-8 lg:flex">
+                            <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
+                                <img src="https://tailwindui.com/img/flags/flag-canada.svg" alt=""
+                                    class="block h-auto w-5 flex-shrink-0">
+                                <span class="ml-3 block text-sm font-medium">CAD</span>
+                                <span class="sr-only">, change currency</span>
+                            </a>
+                        </div> -->
+                        <!-- Search -->
+
                         <!-- <div class="flex lg:ml-6">
                             <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
                                 <span class="sr-only">Search</span>
@@ -771,7 +772,7 @@
 
                         <!-- Cart -->
                         <div class="ml-4 flow-root lg:ml-6">
-                            <a href="#" class="group -m-2 flex items-center p-2">
+                            <a href="#" class=" -m-2 flex items-center p-2">
                                 <!-- Heroicon name: outline/shopping-bag -->
                                 <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

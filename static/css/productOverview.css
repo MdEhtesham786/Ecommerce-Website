@@ -1,0 +1,9 @@
+html {
+    overflow-x: hidden;
+}
+
+.main {
+    position: absolute;
+    width: 100vw;
+    top: 4.5vw;
+}
