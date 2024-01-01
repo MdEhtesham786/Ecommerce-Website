@@ -1,0 +1,52 @@
+@media (max-width:1110px) {
+    html {
+        font-size: 15px;
+    }
+
+    .cards {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:916px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:853px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:745px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width:672px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:604px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width:556px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width:487px) {
+    html {
+        font-size: 7px;
+    }
+}

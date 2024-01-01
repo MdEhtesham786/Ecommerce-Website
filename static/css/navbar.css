@@ -1,0 +1,7 @@
+#carouselExampleControls {
+    background: linear-gradient(transparent 80%, #eaeded);
+}
+
+#carouselExampleControls:hover .carousel-controls {
+    /* border: 2px solid gray; */
+}

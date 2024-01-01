@@ -1,0 +1,74 @@
+<!-- contain starts here -->
+<div class="search-container">
+    <div class="filter-dropdown">
+        <select
+            class="block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Filter by...</option>
+            <option selected value="All">All star</option>
+            <option value="1">1 star</option>
+            <option value="2">2 star</option>
+            <option value="3">3 star</option>
+            <option value="4">4 star</option>
+            <option value="5">5 star</option>
+        </select>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Search Customer Review" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</div>
+<section id="testimonials">
+    <div class="testimonial-heading">
+        <span>Comments</span>
+        <%if(Data){%>
+            <span>
+                <%=Data.length%>
+            </span>
+            <%}%>
+    </div>
+    <div class="testimonial-box-container">
+        <% if (Data && Data.length> 0) { %>
+            <% Data.forEach(function(review) { %>
+                <div class="testimonial-box">
+                    <div class="box-top">
+                        <!--profile----->
+                        <div class="profile">
+                            <!--img---->
+                            <div class="profile-img">
+                                <!-- Display the reviewer's profile picture here -->
+
+                                <img src="../static/img/avatar-png.png" alt="">
+                            </div>
+                            <div class="name-user">
+                                <strong>
+                                    <%=review.name %>
+                                </strong>
+                                <span>
+                                    <%=review.productName%>
+                                </span>
+                            </div>
+                        </div>
+                        <!--reviews------>
+                        <div class="reviews">
+                            <% for (var i=0; i < review.rating; i++) { %>
+                                <i class="fas fa-star"></i>
+                                <% } %>
+                                    <% for (var i=review.rating; i < 5; i++) { %>
+                                        <i class="far fa-star"></i>
+                                        <% } %><!--Empty star-->
+                        </div>
+                    </div>
+                    <div class="client-comment">
+                        <p>
+                            <%= review.comment %>
+                        </p>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <p>No reviews found.</p>
+                        <% } %>
+    </div>
+
+</section>

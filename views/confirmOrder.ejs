@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .custom-number-input input:focus {
+            outline: none !important;
+        }
+
+
+
+
+
+
+        .subMitDiv div button {
+            height: 2.5rem;
+            border-radius: 6px;
+            padding: 0 .5rem;
+            border: 2px solid #e7e7e9;
+        }
+
+        .custom-number-input button:focus {
+            outline: none !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <%- include('../templates/progressBar.ejs')%>
+        <form class=" px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto mb-12"
+            action="/api/v1/order/<%=productsId%>/confirm-order" method="post">
+
+            <div
+                class="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-[95%] mx-auto xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
+                <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
+                    <div class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 w-full">
+                        <p
+                            class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">
+                            Your Items:</p>
+                        <%products.forEach((product)=>{%>
+                            <div
+                                class="mt-4 md:mt-6 flex flex-col md:flex-row justify-center items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
+                                <div class="w-[15%]">
+                                    <img class="justify-center items-center hidden md:flex object-contain h-full w-full"
+                                        src="../../static/img/product-img/<%=product.image.url%>" alt="dress" />
+                                    <img class="w-full md:hidden"
+                                        src="../../static/img/product-img/<%=product.image.url%>" alt="dress" />
+                                </div>
+                                <div
+                                    class="border-b h-full border-gray-300 md:flex-row flex-col flex justify-between items-center w-full space-y-4 md:space-y-0">
+                                    <div class="w-full flex flex-col justify-start items-start space-y-8">
+                                        <h3
+                                            class="text-xl dark:text-white xl:text-2xl font-semibold leading-6 text-gray-800 overflow-hidden whitespace-nowrap text-ellipsis w-[23rem]">
+                                            <%=product.name%>
+                                        </h3>
+
+                                    </div>
+                                    <div class="flex justify-around items-start w-full">
+
+
+                                        <div
+                                            class="flex w-fit justify-between  items-center text-base dark:text-white xl:text-lg leading-6 text-gray-800">
+                                            <div class="flex flex-row h-10  rounded-lg  bg-transparent mt-1 w-[6rem]">
+                                                <button data-action="decrement" type="button"
+                                                    class=" bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-300 h-full  rounded-l cursor-pointer outline-none w-full">
+                                                    <span class="block h-full m-auto text-2xl font-thin">−</span>
+                                                </button>
+                                                <input type="number"
+                                                    class="quantity focus:outline-none text-center w-full bg-gray-200 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                                                    name="<%=product.id%>" value="1" readonly></input>
+                                                <button data-action="increment" type="button"
+                                                    class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-300 h-full w-[100%] rounded-r cursor-pointer">
+                                                    <span class="block h-full m-auto text-2xl font-thin">+</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+
+                                        <p class=" text-base dark:text-white xl:text-lg leading-6">
+
+                                            <span> ₹ </span><span data-price="<%=product.price%>" class="price">
+                                                <%=product.price%>
+                                            </span>
+                                            <!-- <span class="text-red-300 line-through"> $45.00</span> -->
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-50 dark:bg-gray-800 w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-8  flex-col">
+                    <div class="flex flex-col  w-full bg-gray-50 dark:bg-gray-800 space-y-6">
+                        <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Summary</h3>
+                        <div
+                            class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+                            <div class="flex justify-between w-full">
+                                <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
+                                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">
+                                    <span>₹</span>
+                                    <span id="subtotal">
+                                        <%=totalPrice%>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="flex justify-between items-center w-full">
+                                <p class="text-base dark:text-white leading-4 text-gray-800">Shipping</p>
+                                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">
+                                    <span>+ ₹</span>
+                                    <span id="shippingPrice">
+                                        <%=totalPrice<500?'40':'0.00'%>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center w-full">
+                            <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
+                            <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">
+                                <span>₹</span>
+                                <span id="total">
+                                    <%=totalPrice<500?totalPrice+40:totalPrice%>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full submitDiv">
+
+                        <div class="flex justify-center items-center col-span-2">
+
+                            <button type="submit"
+                                class="cursor-pointer w-[90%] h-[3rem] bg-[#4f46e5] text-white rounded-lg text-lg hover:bg-[#3830bb] transition-all duration-75 ease-linear">Proceed
+                                to Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script src="../../static/script/confirmOrder.js"></script>
+</body>
+
+</html>

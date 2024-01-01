@@ -1,0 +1,25 @@
+<%if(role==='seller' ){%>
+    <div class="antialiased  bg-[color:var(--bg-black)] w-full  min-h-screen text-slate-300 relative py-4">
+        <div class="grid grid-cols-12 mx-auto gap-2 sm:gap-4 md:gap-6 lg:gap-10 xl:gap-14 max-w-7xl my-10 px-2">
+            <%- include('../templates/sellerDashboardNavbar.ejs')%>
+                <div id="content"
+                    class="bg-[var(--bg-white-10)] col-span-9 rounded-lg <%if(content !=='createProduct'){%>p-6<%  }%>">
+                    <%if(content==='dashboard'){%>
+                        <%- include('../templates/sellerDashboard.ejs')%>
+                            <%}else if(content==='orders' ){%>
+                                <%- include('../templates/sellerOrders.ejs')%>
+                                    <%}else if(content==='createProduct' ){%>
+                                        <%- include('../templates/createProduct.ejs')%>
+                                            <%}else if(content==='manageProduct' ){%>
+                                                <%- include('../templates/productManagement.ejs')%>
+                                                    <%}else if(content==='updateProduct' ){%>
+                                                        <%- include('../templates/updateProduct.ejs')%>
+                                                            <%}else if(content==='productReviews' ){%>
+                                                                <%- include('../templates/sellerReviews.ejs')%>
+                                                                    <%}%>
+                </div>
+        </div>
+    </div>
+    <%}else if(role==='admin' ){%>
+
+        <%}%>

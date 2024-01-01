@@ -1,0 +1,7 @@
+categories
+1.Fashion (Apparel, Footwear, Bags, Accessories, Jewelry, Eyewear, Cosmetics, and Beauty)
+2. Electronics
+3.Sports
+4.Health & Wellness (Supplements, Nutraceuticals, Aromatherapy products, etc.)
+5. Children's goods (Toys, Children's clothing, etc.)
+6. Others
