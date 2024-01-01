@@ -16,7 +16,12 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const cors = require('cors');
-app.use(cors());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // '*' allows any origin, replace with your specific domain for security.
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 const upload = multer();
 const app = express();
 //IMPORTS
