@@ -96,15 +96,11 @@ exports.shipping = catchAsyncErrors(async (req, res, next) => {
         phone_number
     };
     const token = jwt.sign(shippingInfo, process.env.JWT_SECRET, { expiresIn: 7200000 });
-    console.log(token);
     sendCookie('orderDetails', token, 7200000, res);
     return res.redirect(`/api/v1/order/${req.params.id}/confirm-order`);
 });
 exports.confirmOrder = catchAsyncErrors(async (req, res, next) => {
-    console.log('dude');
-    console.log(req.cookies.orderDetails);
     let decrypted = jwt.verify(req.cookies.orderDetails, process.env.JWT_SECRET);
-    console.log('DECRYPTED', decrypted);
     if (!req.cookies.orderDetails) {
         next(new ErrorHandler('Cookie expired', 304));
     }
@@ -145,6 +141,7 @@ exports.confirmOrder = catchAsyncErrors(async (req, res, next) => {
             };
             const token = jwt.sign(confirmOrder, process.env.JWT_SECRET, { expiresIn: 7200000 });
             sendCookie('confirmOrder', token, 7200000, res);
+
             return res.redirect(`/api/v1/order/${req.params.id}/payment`);
 
             // return res.render('confirmOrder', { layout: 'confirmOrder', productsId: req.params.id, products: orderItems, totalPrice, page: 'confirmOrder' });

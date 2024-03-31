@@ -1,8 +1,5 @@
 const multer = require('multer');
 const saveImage = (destination, mb) => {
-
-
-
     return { storage, limits };
 };
 

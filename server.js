@@ -1,7 +1,7 @@
 // import { createRequire } from 'module';
 // const require = createRequire(import.meta.url);
 require('dotenv').config();
-//Hnadling Uncaught Execption
+//Handling Uncaught Execption
 process.on('uncaughtException', err => {
     console.log(`Error: ${err.message}`);
     console.log('Shutting down the server due to Uncaught Exception');
@@ -12,9 +12,12 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 5001;
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const app = express();
 const expressEjsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const upload = multer();
+
 const cors = require('cors');
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // '*' allows any origin, replace with your specific domain for security.
@@ -22,8 +25,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-const upload = multer();
-const app = express();
+
 //IMPORTS
 const errorMiddleware = require('./middleware/error.js');
 const catchAsyncErrors = require('./middleware/catchAsyncErrors');

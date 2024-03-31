@@ -215,6 +215,7 @@ exports.paymentPage = catchAsyncErrors(async (req, res, next) => {
     }
     // const decodedData = jwt.verify(req.cookies.confirmOrder, process.env.JWT_SECRET);
     // res.json({ decodedData });
+    console.log('YOOOOOOO');
     return res.render('payment', { layout: 'payment', products: req.params.id, user: req.user, page: 'payment' });
 });
 exports.paymentSuccessfulPage = catchAsyncErrors(async (req, res, next) => {
