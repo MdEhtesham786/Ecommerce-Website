@@ -22,7 +22,6 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
         }
     }
     // sendToken(user, process.env.JWT_EXPIRE);
-    // console.log(token);
     next();
 
 });

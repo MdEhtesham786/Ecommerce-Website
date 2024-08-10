@@ -193,7 +193,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
                         newProduct.moreInfo = moreInfo;
                     }
                     await productModel.findByIdAndUpdate(req.params.id, { $set: newProduct }, { new: true, runValidators: true }).then(finalProduct => {
-                        console.log('Updated product', finalProduct);
+                        console.log('Updated product');
                         return res.redirect('/api/v1/seller/manage-product');
                     }).catch(err => {
                         return next(new ErrorHandler(`No product with id ${err.value}`, 400));

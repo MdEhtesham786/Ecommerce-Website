@@ -5,9 +5,10 @@ const ErrorHandler = require('../utils/errorHandler.js');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const { sendToken, sendCookie } = require('../utils/jwtToken');
 const jwt = require('jsonwebtoken');
-const stripe = require('stripe')(process.env.STRIPE_PUBLISHABLE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 require('dotenv').config();
 exports.createPaymentIntent = catchAsyncErrors(async (req, res, next) => {
+    // console.log(req.cookies);
     const confirmOrder = jwt.verify(req.cookies.confirmOrder, process.env.JWT_SECRET);
 
     if (!confirmOrder) {
@@ -15,21 +16,20 @@ exports.createPaymentIntent = catchAsyncErrors(async (req, res, next) => {
     }
     // let amount = confirmOrder.totalPrice * 100;
     let amount = 100; // paise
-    console.log(amount);
     const paymentIntent = await stripe.paymentIntents.create({
         amount,// paise
         currency: "inr",
-        automatic_payment_methods: {
-            enabled: true,
-        },
+        payment_method_types: ['card'],
+
     });
+    console.log(amount);
     return res.json({
         clientSecret: paymentIntent.client_secret,
-        emailAddress: req.user.recoveryEmail || 'mdehteshamshaikh1@gmail.com'
+        emailAddress: req.user.recoveryEmail || 'mdehteshamshaikh1@gmail.com',
+        id: paymentIntent.id
     });
 });
 exports.createOrder = catchAsyncErrors(async (req, res, next) => {
-    console.log('aaya');
     const { shippingInfo, orderItems, paymentInfo, itemsPrice, taxPrice, shippingPrice, totalPrice, orderStatus } = req.body;
     const order = new orderModel({
         shippingInfo,
