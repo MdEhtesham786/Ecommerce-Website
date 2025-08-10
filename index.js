@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 
 //IMPORTS
 const errorMiddleware = require('./middleware/error.js');
-const catchAsyncErrors = require('./middleware/catchAsyncErrors');
+const catchAsyncErrors = require('./middleware/catchAsyncErrors.js');
 const connectDB = require('./db/connect.js');
 app.set('views', 'views');
 app.set('view engine', 'ejs');
@@ -46,10 +46,10 @@ app.use(expressEjsLayouts);
 mongoose.set('strictQuery', true);
 mongoose.set('strictPopulate', false);
 //Routes
-const router = require('./routes/routes');
-const userRoute = require('./routes/userRoute');
-const productRoute = require('./routes/productRoute');
-const orderRoute = require('./routes/orderRoutes');
+const router = require('./routes/routes.js');
+const userRoute = require('./routes/userRoute.js');
+const productRoute = require('./routes/productRoute.js');
+const orderRoute = require('./routes/orderRoutes.js');
 const { isAuthenticatedUser } = require('./middleware/auth.js');
 const jwt = require('jsonwebtoken');
 const productModel = require('./models/productModel.js');
